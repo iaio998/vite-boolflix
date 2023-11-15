@@ -43,8 +43,9 @@ export default {
 
 <template>
   <header>
-    <Component_1Header />
+    <Component_1Header class="bg-black" />
   </header>
+  <main></main>
 </template>
 
 <style scoped></style>

@@ -1,10 +1,10 @@
 <template>
-  <div class="px-5">
+  <div class="px-5 py-3">
     <div class="row justify-content-evenly align-items-center">
       <div class="col">
-        <h1>BOOLFLIX</h1>
+        <h1 class="text-danger">BOOLFLIX</h1>
       </div>
-      <div class="col">
+      <div class="col d-flex justify-content-end">
         <SearchComponent />
       </div>
     </div>
