@@ -1,9 +1,13 @@
 <script>
 import { store } from "./data/store";
 import axios from "axios";
+import Component_1Header from "./components/Component_1Header.vue";
 
 export default {
   name: "App",
+  components: {
+    Component_1Header,
+  },
   data() {
     return {
       store,
@@ -37,6 +41,10 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <header>
+    <Component_1Header />
+  </header>
+</template>
 
 <style scoped></style>
