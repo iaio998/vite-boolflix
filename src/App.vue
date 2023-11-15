@@ -44,12 +44,8 @@ export default {
 </script>
 
 <template>
-  <header>
-    <Component_1Header class="bg-black" />
-  </header>
-  <main>
-    <Component_2Main />
-  </main>
+  <Component_1Header class="bg-black" />
+  <Component_2Main />
 </template>
 
 <style scoped></style>

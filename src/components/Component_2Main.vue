@@ -1,10 +1,7 @@
 <template>
-  <div id="main">
-    <div class="container">
-      <div>
-        <SearchedFilms />
-      </div>
-    </div>
+  <div class="container">
+    <SearchedFilms />
+    <SearchedSeries />
   </div>
 </template>
 
@@ -12,11 +9,13 @@
 import { store } from "../data/store";
 import CardComponent from "./sons/CardComponent.vue";
 import SearchedFilms from "./sons/SearchedFilms.vue";
+import SearchedSeries from "./sons/SearchedSeries.vue";
 export default {
   name: "Component_2Main",
   components: {
     CardComponent,
     SearchedFilms,
+    SearchedSeries,
   },
   data() {
     return {
@@ -26,7 +25,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-#main {
-}
-</style>
+<style lang="scss" scoped></style>

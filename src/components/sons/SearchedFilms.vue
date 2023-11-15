@@ -1,11 +1,14 @@
 <template>
-  <div class="row">
+  <div class="row g-3 py-2">
     <!-- <h3>MOVIES</h3> -->
     <CardComponent
       v-for="(film, index) in store.filmsList"
       :key="index"
       :image="store.baseUrlImages + film.poster_path"
-      :name="film.name"
+      :name="film.title"
+      :originalName="film.original_title"
+      :lang="film.original_language"
+      :vote="film.vote_average"
     />
   </div>
 </template>
