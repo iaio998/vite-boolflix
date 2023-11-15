@@ -2,11 +2,13 @@
 import { store } from "./data/store";
 import axios from "axios";
 import Component_1Header from "./components/Component_1Header.vue";
+import Component_2Main from "./components/Component_2Main.vue";
 
 export default {
   name: "App",
   components: {
     Component_1Header,
+    Component_2Main,
   },
   data() {
     return {
@@ -45,7 +47,9 @@ export default {
   <header>
     <Component_1Header class="bg-black" />
   </header>
-  <main></main>
+  <main>
+    <Component_2Main />
+  </main>
 </template>
 
 <style scoped></style>
