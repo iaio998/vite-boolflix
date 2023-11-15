@@ -1,11 +1,11 @@
 <template>
   <div class="row">
-    <h3>MOVIES</h3>
+    <!-- <h3>MOVIES</h3> -->
     <CardComponent
       v-for="(film, index) in store.filmsList"
       :key="index"
-      :image="store.baseUrlImages + film.filmsList.poster_path"
-      :name="store.filmsList.name"
+      :image="store.baseUrlImages + film.poster_path"
+      :name="film.name"
     />
   </div>
 </template>
