@@ -1,12 +1,13 @@
 <template>
   <div class="col-4">
     <div>
-      <div><img :src="image" :alt="name" /></div>
-      <div class="text-center py-2">
-        <h5>Title: {{ name }}</h5>
-        <h6>Original title:{{ originalName }}</h6>
-        <h6>Language: {{ lang }}</h6>
-        <h6>Rated: {{ vote }}</h6>
+      <div class="img-cont"><img :src="image" :alt="name" /></div>
+      <div class="txt-cont text-center py-2">
+        <h5 class="fs-5">Title: {{ name }}</h5>
+        <h6>Original title: {{ originalName }}</h6>
+        <!-- <p class="m-0">Language: {{ lang }}</p> -->
+        <div>Language: <img class="lang" :src="lang" :alt="lang" /></div>
+        <p class="m-0">Rated: {{ vote }}</p>
       </div>
     </div>
   </div>
@@ -29,7 +30,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-img {
-  width: 100%;
+.img-cont {
+  width: 350px;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}
+.txt-cont {
+  width: 75%;
+  margin: 0 auto;
 }
 </style>

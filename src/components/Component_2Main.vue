@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <SearchedFilms />
-    <SearchedSeries />
+    <SearchedFilms v-if="store.baseParams.query !== ''" />
+    <SearchedSeries v-if="store.baseParams.query !== ''" />
   </div>
 </template>
 

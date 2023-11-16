@@ -33,6 +33,7 @@ export default {
           params: this.store.baseParams,
         })
         .then((res) => {
+          console.log(res.data.results);
           this.store.filmsList = res.data.results;
         });
       axios
@@ -41,6 +42,7 @@ export default {
           params: this.store.baseParams,
         })
         .then((res) => {
+          console.log(res.data.results);
           this.store.seriesList = res.data.results;
         });
     },
