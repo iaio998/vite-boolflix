@@ -12,7 +12,7 @@
         langUp(film.original_language) +
         '/flat/32.png'
       "
-      :vote="film.vote_average"
+      :vote="Math.ceil(film.vote_average / 2)"
     />
   </div>
 </template>
