@@ -13,6 +13,7 @@
         '/flat/32.png'
       "
       :vote="Math.ceil(film.vote_average / 2)"
+      :overview="film.overview"
     />
   </div>
 </template>
