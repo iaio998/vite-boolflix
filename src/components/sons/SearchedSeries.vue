@@ -13,6 +13,7 @@
         '/flat/32.png'
       "
       :vote="serie.vote_average"
+      :overview="serie.overview"
     />
   </div>
 </template>
