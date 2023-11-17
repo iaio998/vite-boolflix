@@ -11,6 +11,7 @@
         class="form-control rounded-1 p-0"
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-default"
+        @keyup.enter="$emit('search', this.text)"
       />
     </div>
     <button

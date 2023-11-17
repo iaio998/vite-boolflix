@@ -1,6 +1,6 @@
 <template>
   <h3 class="text-white px-5 py-2 m-0">TOP RATED MOVIES</h3>
-  <div class="row flex-nowrap py-2">
+  <div class="row overflow-hidden flex-nowrap py-2" ref="sliderTopMovies">
     <SliderComponent
       v-for="(film, index) in store.filmsTopList"
       :key="film.id"
@@ -16,8 +16,15 @@
       :overview="film.overview"
     />
   </div>
+  <div class="" @click="scrollMovieLeft(0, -300)">
+    <i class="fa-solid fa-arrow-left text-white"></i>
+  </div>
+  <div class="" @click="scrollMovieRight(0, 300)">
+    <i class="fa-solid fa-arrow-right text-white"></i>
+  </div>
+
   <h3 class="text-white px-5 py-2 m-0">TOP RATED SERIES</h3>
-  <div class="row flex-nowrap py-2">
+  <div class="row overflow-hidden flex-nowrap py-2" ref="sliderTopSeries">
     <SliderComponent
       v-for="(serie, index) in store.seriesTopList"
       :key="serie.id"
@@ -62,6 +69,22 @@ export default {
       } else {
         return langUpCase;
       }
+    },
+    scrollMovieLeft(y, x) {
+      let slider = this.$refs.sliderTopMovies;
+      slider.scrollBy({
+        top: y,
+        left: x,
+        behavior: "smooth",
+      });
+    },
+    scrollMovieRight(y, x) {
+      let slider = this.$refs.sliderTopMovies;
+      slider.scrollBy({
+        top: y,
+        left: x,
+        behavior: "smooth",
+      });
     },
   },
 };

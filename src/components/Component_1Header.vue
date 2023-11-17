@@ -6,7 +6,7 @@
       </div>
       <div class="col text-white">
         <ul class="d-flex p-0 m-0">
-          <li class="fw-medium px-3 fs-5" v-for="el in menu">{{ el }}</li>
+          <li class="fw-medium px-3 fs-4" v-for="el in menu">{{ el }}</li>
         </ul>
       </div>
       <div class="col-2 d-flex justify-content-end">
@@ -71,15 +71,17 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/style/partials/variables" as *;
 .god {
-  background-color: $color-black;
+  background-color: rgba(0, 0, 0, 0.87);
+  height: 95px;
   h1 {
     font-size: 3em;
     color: $color-red;
     position: relative;
   }
   li {
-    color: $color-grey-onhover;
+    color: grey;
     &:hover {
+      text-shadow: 0 0 10px $color-grey-onhover, 0 0 30px white;
       color: $color-red;
       cursor: pointer;
     }
