@@ -1,10 +1,15 @@
 <template>
-  <div class="px-5 py-3">
+  <div class="god px-5 py-3">
     <div class="row justify-content-evenly align-items-center">
-      <div class="col">
-        <h1 class="text-danger">BOOLFLIX</h1>
+      <div class="col-2">
+        <h1 class="fw-bold m-0">BOOLFLIX</h1>
       </div>
-      <div class="col d-flex justify-content-end">
+      <div class="col text-white">
+        <ul class="d-flex p-0 m-0">
+          <li class="fw-medium px-3 fs-5" v-for="el in menu">{{ el }}</li>
+        </ul>
+      </div>
+      <div class="col-2 d-flex justify-content-end">
         <SearchComponent @search="getSearched" />
       </div>
     </div>
@@ -23,6 +28,7 @@ export default {
   data() {
     return {
       store,
+      menu: ["Home", "TV series", "Movies", "Recently added", "My list"],
     };
   },
   methods: {
@@ -62,4 +68,21 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "../assets/style/partials/variables" as *;
+.god {
+  background-color: $color-black;
+  h1 {
+    font-size: 3em;
+    color: $color-red;
+    position: relative;
+  }
+  li {
+    color: $color-grey-onhover;
+    &:hover {
+      color: $color-red;
+      cursor: pointer;
+    }
+  }
+}
+</style>

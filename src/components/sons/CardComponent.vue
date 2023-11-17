@@ -1,5 +1,5 @@
 <template>
-  <div class="col-4">
+  <div class="col p-1">
     <div class="box">
       <div class="box-inner">
         <div class="box-front">
@@ -12,7 +12,7 @@
             <h5 class="fs-5">{{ name }}</h5>
             <h6>Original title: {{ originalName }}</h6>
             <div>Language: <img class="lang" :src="lang" :alt="lang" /></div>
-            <p class="m-0">
+            <p class="m-1">
               Rated:
               <span v-for="n in 5"
                 ><i v-if="n <= vote" class="fa-solid fa-star"></i
@@ -48,11 +48,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "../../assets/style/partials/variables" as *;
+
 .box {
   background-color: transparent;
   width: 350px;
   height: 525px;
-  border: 1px solid #eeeeee;
+  border: 1px solid $color-black;
   perspective: 1000px;
   overflow: hidden;
 

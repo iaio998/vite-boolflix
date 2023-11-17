@@ -1,7 +1,5 @@
 @use './partials/variables' as *;
 
-@use './partials/variables' as *;
-
 $fa-font-path: '../webfonts';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
@@ -12,5 +10,8 @@ $fa-font-path: '../webfonts';
 
 body{
     width: 100%;
-    background-color: grey;
+    background-color:$color-grey;
+}
+ul {
+    list-style: none;
 }

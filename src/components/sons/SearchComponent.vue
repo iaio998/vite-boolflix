@@ -5,16 +5,17 @@
         >Default</span
       > -->
       <input
+        placeholder="Movie, serie..."
         v-model="this.text"
         type="text"
-        class="form-control"
+        class="form-control rounded-1 p-0"
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-default"
       />
     </div>
     <button
       type="button"
-      class="btn btn-success"
+      class="rounded-2 fs-bold"
       @click="$emit('search', this.text)"
     >
       Search
@@ -36,4 +37,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "../../assets/style/partials/variables" as *;
+button {
+  background-color: $color-red;
+  color: $color-white;
+  border: 0;
+  &:hover {
+    background-color: $color-red-onhover;
+  }
+}
+</style>
