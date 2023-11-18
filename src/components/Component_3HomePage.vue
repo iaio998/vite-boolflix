@@ -1,5 +1,17 @@
 <template>
-  <h3 class="text-white px-5 py-2 m-0">TOP RATED MOVIES</h3>
+  <div class="d-flex align-items-center justify-content-between">
+    <h3 class="text-white px-5 py-2 m-0">TOP RATED MOVIES</h3>
+    <div class="px-5">
+      <i
+        class="fa-solid fa-arrow-left px-2 py-1 mx-1 fs-3"
+        @click="scrollMovieLeft(0, -300)"
+      ></i>
+      <i
+        class="fa-solid fa-arrow-right px-2 py-1 mx-1 fs-3"
+        @click="scrollMovieRight(0, 300)"
+      ></i>
+    </div>
+  </div>
   <div class="row overflow-hidden flex-nowrap py-2" ref="sliderTopMovies">
     <SliderComponent
       v-for="(film, index) in store.filmsTopList"
@@ -16,14 +28,19 @@
       :overview="film.overview"
     />
   </div>
-  <div class="" @click="scrollMovieLeft(0, -300)">
-    <i class="fa-solid fa-arrow-left text-white"></i>
+  <div class="d-flex align-items-center justify-content-between">
+    <h3 class="text-white px-5 py-2 m-0">TOP RATED SERIES</h3>
+    <div class="px-5">
+      <i
+        class="fa-solid fa-arrow-left px-2 py-1 mx-1 fs-3"
+        @click="scrollSerieLeft(0, -300)"
+      ></i>
+      <i
+        class="fa-solid fa-arrow-right px-2 py-1 mx-1 fs-3"
+        @click="scrollSerieRight(0, 300)"
+      ></i>
+    </div>
   </div>
-  <div class="" @click="scrollMovieRight(0, 300)">
-    <i class="fa-solid fa-arrow-right text-white"></i>
-  </div>
-
-  <h3 class="text-white px-5 py-2 m-0">TOP RATED SERIES</h3>
   <div class="row overflow-hidden flex-nowrap py-2" ref="sliderTopSeries">
     <SliderComponent
       v-for="(serie, index) in store.seriesTopList"
@@ -86,8 +103,41 @@ export default {
         behavior: "smooth",
       });
     },
+    scrollSerieLeft(y, x) {
+      let slider = this.$refs.sliderTopSeries;
+      slider.scrollBy({
+        top: y,
+        left: x,
+        behavior: "smooth",
+      });
+    },
+    scrollSerieRight(y, x) {
+      let slider = this.$refs.sliderTopSeries;
+      slider.scrollBy({
+        top: y,
+        left: x,
+        behavior: "smooth",
+      });
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "../assets/style/partials/variables" as *;
+.arrows {
+  margin: 0 auto;
+}
+.fa-solid {
+  background-color: rgba(128, 128, 128, 0.247);
+  border-radius: 10%;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-grey-onhover;
+    text-shadow: 0 0 10px $color-grey-onhover, 0 0 30px white;
+    color: $color-red;
+    cursor: pointer;
+  }
+}
+</style>
