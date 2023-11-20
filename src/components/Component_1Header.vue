@@ -6,11 +6,22 @@
       </div>
       <div class="col text-white">
         <ul class="d-flex p-0 m-0">
-          <li class="fw-medium px-3 fs-4" v-for="el in menu">{{ el }}</li>
+          <li class="fw-medium px-3 fs-5" v-for="el in menu">{{ el }}</li>
         </ul>
       </div>
-      <div class="col-2 d-flex justify-content-end">
+      <div class="col-2">
         <SearchComponent @search="getSearched" />
+      </div>
+      <div class="col-1">
+        <div class="user">
+          <img
+            :src="store.users[store.variable].img"
+            :alt="store.users[store.variable].name"
+          />
+          <p class="user-name m-0">
+            {{ store.users[store.variable].name }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -18,12 +29,14 @@
 
 <script>
 import SearchComponent from "./sons/SearchComponent.vue";
+import UserComponent from "./sons/UserComponent.vue";
 import { store } from "../data/store";
 import axios from "axios";
 export default {
   name: "Component_1Header",
   components: {
     SearchComponent,
+    UserComponent,
   },
   data() {
     return {
@@ -86,5 +99,30 @@ export default {
       cursor: pointer;
     }
   }
+}
+img {
+  width: 100%;
+  border-radius: 50%;
+}
+.user {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $color-grey;
+  border: 0.1px solid white;
+  margin: 0 10px;
+  transition: 0.5s ease;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+.user-name {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: $color-white;
+  bottom: -30px;
+  right: 25px;
 }
 </style>

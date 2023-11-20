@@ -1,18 +1,4 @@
 <template>
-  <!-- <CardComponent
-      v-for="(film, index) in store.filmsTopList"
-      :key="film.id"
-      :image="store.baseUrlImages + film.poster_path"
-      :name="film.title"
-      :originalName="film.original_title"
-      :lang="
-        'https://flagsapi.com/' +
-        langUp(film.original_language) +
-        '/flat/32.png'
-      "
-      :vote="Math.ceil(film.vote_average / 2)"
-      :overview="film.overview"
-    /> -->
   <div class="col p-1">
     <div class="box">
       <div class="box-inner">
@@ -62,24 +48,7 @@ export default {
       store,
     };
   },
-  methods: {
-    // langUp(val) {
-    //   let langUpCase = val.toUpperCase();
-    //   if (val === "en" || val === "uk") {
-    //     return "GB";
-    //   } else if (val === "ja") {
-    //     return "JP";
-    //   } else if (val === "ko") {
-    //     return "KP";
-    //   } else if (val === "hi") {
-    //     return "IN";
-    //   } else if (val === "zh") {
-    //     return "CN";
-    //   } else {
-    //     return langUpCase;
-    //   }
-    // },
-  },
+  methods: {},
 };
 </script>
 

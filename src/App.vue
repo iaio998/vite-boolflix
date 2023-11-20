@@ -74,6 +74,12 @@ export default {
         return "IN";
       } else if (val === "zh") {
         return "CN";
+      } else if (val === "da") {
+        return "DK";
+      } else if (val === "cs") {
+        return "CZ";
+      } else if (val === "el") {
+        return "GR";
       } else {
         return langUpCase;
       }
@@ -98,7 +104,7 @@ export default {
           <CardComponent
             v-for="(film, index) in store.filmsList"
             :key="film.id"
-            :image="store.baseUrlImages + film.poster_path"
+            :image="film.poster_path"
             :name="film.title"
             :originalName="film.original_title"
             :lang="
@@ -116,7 +122,7 @@ export default {
           <CardComponent
             v-for="(serie, index) in store.seriesList"
             :key="serie.id"
-            :image="store.baseUrlImages + serie.poster_path"
+            :image="serie.poster_path"
             :name="serie.name"
             :originalName="serie.original_name"
             :lang="

@@ -125,9 +125,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/style/partials/variables" as *;
-.arrows {
-  margin: 0 auto;
-}
+
 .fa-solid {
   background-color: rgba(128, 128, 128, 0.247);
   border-radius: 10%;

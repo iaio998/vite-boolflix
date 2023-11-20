@@ -5,12 +5,13 @@
         <h1 id="title" class="col text-center m-0">BOOLFLIX</h1>
       </div>
       <div class="row justify-content-center align-items-center">
-        <div class="col-1" v-for="(el, index) in users" :key="el.id">
-          <div class="user position-relative" @click="store.user = el.name">
-            <img :src="el.img" :alt="el.name" />
-            <p class="user-name m-0 position-absolute">{{ el.name }}</p>
-          </div>
-        </div>
+        <UserComponent
+          v-for="(el, index) in store.users"
+          :image="el.img"
+          :name="el.name"
+          :key="el.id"
+          @click="(store.user = el.name), (store.variable = el.id - 1)"
+        />
         <div class="col-1">
           <div id="add-new">
             <p class="m-0">+</p>
@@ -23,8 +24,12 @@
 
 <script>
 import { store } from "../data/store";
+import UserComponent from "./sons/UserComponent.vue";
 export default {
   name: "Component_0Preload",
+  components: {
+    UserComponent,
+  },
   data() {
     return {
       store,

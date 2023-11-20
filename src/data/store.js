@@ -20,4 +20,9 @@ export const store = reactive({
   seriesList: [],
   filmsTopList: [],
   seriesTopList: [],
+  variable: "",
+  users: [
+    { id: 1, img: "/images/alien.png", name: "User 1", flag: false },
+    { id: 2, img: "/images/penguin.png", name: "User 2", flag: false },
+  ],
 });

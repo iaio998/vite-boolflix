@@ -4,7 +4,8 @@
       <div class="box-inner">
         <div class="box-front">
           <div class="img-cont">
-            <img :src="image" :alt="name" />
+            <img :src="store.baseUrlImages + image" :alt="name" v-if="image" />
+            <img src="/images/substitution.jpg" :alt="name" v-else />
           </div>
         </div>
         <div class="box-back bg-black">
@@ -31,6 +32,7 @@
 </template>
 
 <script>
+import { store } from "../../data/store";
 export default {
   name: "CardComponent",
   props: {
@@ -42,8 +44,11 @@ export default {
     overview: String,
   },
   data() {
-    return {};
+    return {
+      store,
+    };
   },
+  methods: {},
 };
 </script>
 
