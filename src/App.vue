@@ -24,7 +24,7 @@ export default {
   methods: {
     getApiMoviesAndSeries() {
       axios
-        // films API
+        // movies API
         .get(this.store.baseApiUrl + this.store.endpointSearch.movies, {
           params: this.store.baseParams,
         })
@@ -33,7 +33,7 @@ export default {
           this.store.filmsList = res.data.results;
         });
       axios
-        // movies API
+        // series API
         .get(this.store.baseApiUrl + this.store.endpointSearch.series, {
           params: this.store.baseParams,
         })
@@ -62,6 +62,26 @@ export default {
           this.store.seriesTopList = res.data.results;
         });
     },
+    // getApiGenres() {
+    //   axios
+    //     // movies API
+    //     .get(this.store.baseUrlMoviesGenres, {
+    //       params: this.store.baseParams.api_key,
+    //     })
+    //     .then((res) => {
+    //       console.log(res.data);
+    //       // this.store.filmsGenres = res.data.results;
+    //     });
+    //   axios
+    //     // series API
+    //     .get(this.store.baseUrlSeriesGenres, {
+    //       params: this.store.baseParams.api_key,
+    //     })
+    //     .then((res) => {
+    //       console.log(res.data);
+    //       // this.store.seriesGenres = res.data.results;
+    //     });
+    // },
     langUp(val) {
       let langUpCase = val.toUpperCase();
       if (val === "en" || val === "uk") {
@@ -88,6 +108,7 @@ export default {
   created() {
     this.getApiTopRated();
     this.getApiMoviesAndSeries();
+    this.getApiGenres();
   },
 };
 </script>

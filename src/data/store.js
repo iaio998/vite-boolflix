@@ -5,6 +5,8 @@ export const store = reactive({
   baseUrlImages: "https://image.tmdb.org/t/p/w342",
   baseUrlTopMovies: "https://api.themoviedb.org/3/trending/movie/week",
   baseUrlTopSeries: "https://api.themoviedb.org/3/trending/tv/week",
+  baseUrlMoviesGenres: "https://api.themoviedb.org/3/genre/movie/list",
+  baseUrlSeriesGenres: "https://api.themoviedb.org/3/genre/tv/list",
   endpointSearch: {
     movies: "/search/movie",
     series: "/search/tv",
@@ -20,9 +22,11 @@ export const store = reactive({
   seriesList: [],
   filmsTopList: [],
   seriesTopList: [],
+  filmsGenres: [],
+  seriesGenres: [],
   variable: "",
   users: [
-    { id: 1, img: "/images/alien.png", name: "User 1", flag: false },
-    { id: 2, img: "/images/penguin.png", name: "User 2", flag: false },
+    { id: 1, img: "/images/alien.png", name: "User 1" },
+    { id: 2, img: "/images/penguin.png", name: "User 2" },
   ],
 });
